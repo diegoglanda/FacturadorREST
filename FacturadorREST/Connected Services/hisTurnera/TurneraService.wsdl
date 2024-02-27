@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TurneraService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ITurneraService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/HISMiddleware" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITurneraService_ObtenerProfesionalesAgendables_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProfesionalesAgendables" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ObtenerProfesionalesAgendables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProfesionalesAgendablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ObtenerEspecialidadesAgendables_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEspecialidadesAgendables" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ObtenerEspecialidadesAgendables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEspecialidadesAgendablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ObtenerSedesAgendables_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSedesAgendables" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ObtenerSedesAgendables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerSedesAgendablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ObtenerProcedimientosAgendables_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProcedimientosAgendables" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ObtenerProcedimientosAgendables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProcedimientosAgendablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ConsultarPacientePrimeraVez_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPacientePrimeraVez" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ConsultarPacientePrimeraVez_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPacientePrimeraVezResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ObtenerOrdenesMedicas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerOrdenesMedicas" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_ObtenerOrdenesMedicas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerOrdenesMedicasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_InformarGestionOrden_InputMessage">
+    <wsdl:part name="parameters" element="tns:InformarGestionOrden" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_InformarGestionOrden_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InformarGestionOrdenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_CancelarTurno_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarTurno" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_CancelarTurno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarTurnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_InformarTurno_InputMessage">
+    <wsdl:part name="parameters" element="tns:InformarTurno" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_InformarTurno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InformarTurnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_CancelarTurnoV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarTurnoV2" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_CancelarTurnoV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarTurnoV2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_InformarTurnoV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:InformarTurnoV2" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_InformarTurnoV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InformarTurnoV2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_InformarReprogramacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:InformarReprogramacion" />
+  </wsdl:message>
+  <wsdl:message name="ITurneraService_InformarReprogramacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InformarReprogramacionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITurneraService">
+    <wsdl:operation name="ObtenerProfesionalesAgendables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/ObtenerProfesionalesAgendables" message="tns:ITurneraService_ObtenerProfesionalesAgendables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/ObtenerProfesionalesAgendablesResponse" message="tns:ITurneraService_ObtenerProfesionalesAgendables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEspecialidadesAgendables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/ObtenerEspecialidadesAgendables" message="tns:ITurneraService_ObtenerEspecialidadesAgendables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/ObtenerEspecialidadesAgendablesResponse" message="tns:ITurneraService_ObtenerEspecialidadesAgendables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSedesAgendables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/ObtenerSedesAgendables" message="tns:ITurneraService_ObtenerSedesAgendables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/ObtenerSedesAgendablesResponse" message="tns:ITurneraService_ObtenerSedesAgendables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProcedimientosAgendables">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/ObtenerProcedimientosAgendables" message="tns:ITurneraService_ObtenerProcedimientosAgendables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/ObtenerProcedimientosAgendablesResponse" message="tns:ITurneraService_ObtenerProcedimientosAgendables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPacientePrimeraVez">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/ConsultarPacientePrimeraVez" message="tns:ITurneraService_ConsultarPacientePrimeraVez_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/ConsultarPacientePrimeraVezResponse" message="tns:ITurneraService_ConsultarPacientePrimeraVez_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOrdenesMedicas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/ObtenerOrdenesMedicas" message="tns:ITurneraService_ObtenerOrdenesMedicas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/ObtenerOrdenesMedicasResponse" message="tns:ITurneraService_ObtenerOrdenesMedicas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InformarGestionOrden">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/InformarGestionOrden" message="tns:ITurneraService_InformarGestionOrden_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/InformarGestionOrdenResponse" message="tns:ITurneraService_InformarGestionOrden_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarTurno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/CancelarTurno" message="tns:ITurneraService_CancelarTurno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/CancelarTurnoResponse" message="tns:ITurneraService_CancelarTurno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InformarTurno">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/InformarTurno" message="tns:ITurneraService_InformarTurno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/InformarTurnoResponse" message="tns:ITurneraService_InformarTurno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarTurnoV2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/CancelarTurnoV2" message="tns:ITurneraService_CancelarTurnoV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/CancelarTurnoV2Response" message="tns:ITurneraService_CancelarTurnoV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InformarTurnoV2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/InformarTurnoV2" message="tns:ITurneraService_InformarTurnoV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/InformarTurnoV2Response" message="tns:ITurneraService_InformarTurnoV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InformarReprogramacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITurneraService/InformarReprogramacion" message="tns:ITurneraService_InformarReprogramacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITurneraService/InformarReprogramacionResponse" message="tns:ITurneraService_InformarReprogramacion_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITurneraService" type="tns:ITurneraService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerProfesionalesAgendables">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerProfesionalesAgendables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEspecialidadesAgendables">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerEspecialidadesAgendables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSedesAgendables">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerSedesAgendables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProcedimientosAgendables">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerProcedimientosAgendables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPacientePrimeraVez">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ConsultarPacientePrimeraVez" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOrdenesMedicas">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerOrdenesMedicas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarGestionOrden">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/InformarGestionOrden" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarTurno">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/CancelarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarTurno">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/InformarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarTurnoV2">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/CancelarTurnoV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarTurnoV2">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/InformarTurnoV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarReprogramacion">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/InformarReprogramacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITurneraService1" type="tns:ITurneraService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ITurneraService1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerProfesionalesAgendables">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerProfesionalesAgendables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEspecialidadesAgendables">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerEspecialidadesAgendables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSedesAgendables">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerSedesAgendables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProcedimientosAgendables">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerProcedimientosAgendables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPacientePrimeraVez">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ConsultarPacientePrimeraVez" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerOrdenesMedicas">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/ObtenerOrdenesMedicas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarGestionOrden">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/InformarGestionOrden" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarTurno">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/CancelarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarTurno">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/InformarTurno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarTurnoV2">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/CancelarTurnoV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarTurnoV2">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/InformarTurnoV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarReprogramacion">
+      <soap:operation soapAction="http://tempuri.org/ITurneraService/InformarReprogramacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TurneraService">
+    <wsdl:port name="BasicHttpBinding_ITurneraService" binding="tns:BasicHttpBinding_ITurneraService">
+      <soap:address location="http://srv-qa-iis01-h.hospital.austral:8085/HISMiddleware/TurneraService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITurneraService1" binding="tns:BasicHttpBinding_ITurneraService1">
+      <soap:address location="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

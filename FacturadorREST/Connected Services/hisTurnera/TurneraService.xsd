@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/HISMiddleware" />
+  <xs:element name="ObtenerProfesionalesAgendables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cuit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idTipoTurno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idSede" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="idEspecialidad" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProfesionalesAgendablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="ObtenerProfesionalesAgendablesResult" nillable="true" type="q1:ProfesionalesTurneraDataWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEspecialidadesAgendables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cuit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idTipoTurno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idSede" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="idEspecialidad" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerEspecialidadesAgendablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="ObtenerEspecialidadesAgendablesResult" nillable="true" type="q2:EspecialidadesTurneraDataWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSedesAgendables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cuit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idTipoTurno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idSede" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="idEspecialidad" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerSedesAgendablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="ObtenerSedesAgendablesResult" nillable="true" type="q3:SedesTurneraDataWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProcedimientosAgendables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cuit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idSede" type="xs:int" />
+        <xs:element minOccurs="0" name="especialidad" type="xs:int" />
+        <xs:element minOccurs="0" name="codigoCPT" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProcedimientosAgendablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="ObtenerProcedimientosAgendablesResult" nillable="true" type="q4:ProcedimientosTurneraDataWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPacientePrimeraVez">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodigoPaciente" type="xs:int" />
+        <xs:element minOccurs="0" name="CUIT" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdEspecialidad" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarPacientePrimeraVezResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="ConsultarPacientePrimeraVezResult" nillable="true" type="q5:PacienteTurneraPrimeraVezDataWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerOrdenesMedicas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodigoPaciente" type="xs:int" />
+        <xs:element minOccurs="0" name="TipoOrden" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Ambito" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FechaDesde" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaHasta" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerOrdenesMedicasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="ObtenerOrdenesMedicasResult" nillable="true" type="q6:OrdenesMedicasDataWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformarGestionOrden">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CodigoPaciente" type="xs:int" />
+        <xs:element minOccurs="0" name="TipoOrden" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NumeroOrden" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodigoCPT" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformarGestionOrdenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="InformarGestionOrdenResult" nillable="true" type="q7:EstadoRespuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarTurno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoPaciente" type="xs:long" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoFormulario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroFormulario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarTurnoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="CancelarTurnoResult" nillable="true" type="q8:EstadoRespuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformarTurno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEspecialidad" type="xs:int" />
+        <xs:element minOccurs="0" name="idSede" type="xs:int" />
+        <xs:element minOccurs="0" name="cuitProfesional" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaTurno" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sobreTurno" type="xs:boolean" />
+        <xs:element minOccurs="0" name="codigoPaciente" type="xs:long" />
+        <xs:element minOccurs="0" name="cuitFinanciador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codigoPlan" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="condicionPaciente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoFormulario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeroFormulario" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="procedimientos" nillable="true" type="q9:ArrayOfProcedimientoTurnoDataWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformarTurnoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="InformarTurnoResult" nillable="true" type="q10:TurnoInformadoDataWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarTurnoV2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="TurnosCancelar" nillable="true" type="q11:ArrayOfTurnoCancelar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelarTurnoV2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="CancelarTurnoV2Result" nillable="true" type="q12:TurnosCancelados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformarTurnoV2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEspecialidad" type="xs:int" />
+        <xs:element minOccurs="0" name="idSede" type="xs:int" />
+        <xs:element minOccurs="0" name="cuitProfesional" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaTurno" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="sobreTurno" type="xs:boolean" />
+        <xs:element minOccurs="0" name="codigoPaciente" type="xs:long" />
+        <xs:element minOccurs="0" name="cuitFinanciador" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codigoPlan" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="condicionPaciente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="procedimientos" nillable="true" type="q13:ArrayOfProcedimientoTurnoDataWrapper" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformarTurnoV2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="InformarTurnoV2Result" nillable="true" type="q14:TurnoInformadoDataWrapperV2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformarReprogramacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reprogramar" type="xs:boolean" />
+        <xs:element minOccurs="0" name="cuitProfesional" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idEspecialidad" type="xs:int" />
+        <xs:element minOccurs="0" name="idSede" type="xs:int" />
+        <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="horarioInicio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="horarioFin" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="diaSemanal" type="q15:DiaSemanal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InformarReprogramacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="InformarReprogramacionResult" nillable="true" type="q16:TurnosAfectados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OrdenesMedicasService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IOrdenesMedicasService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/HISMiddleware.Modules.OrdenesMedicas.Models" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/HISMiddleware" />
+      <xs:element name="ObtenerCxPendientes_000078CNS">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CaseNumber" type="xs:int" />
+            <xs:element minOccurs="0" name="FechaDesde" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="FechaHasta" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="TipoFormulario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="NumeroFormulario" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="IdServicio" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="CodigoPaciente" type="xs:int" />
+            <xs:element minOccurs="0" name="HistoriaClinica" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ObtenerCxPendientes_000078CNSResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/HISMiddleware.Modules.OrdenesMedicas.Models" minOccurs="0" name="ObtenerCxPendientes_000078CNSResult" nillable="true" type="q1:CxPendientesResponseDataWrapper" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PlanificarCirugia_000082ABM">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CodigoPaciente" type="xs:int" />
+            <xs:element minOccurs="0" name="TipoOrden" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="NumeroOrden" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="NroCasoBpm" type="xs:int" />
+            <xs:element minOccurs="0" name="FechaPlanificada" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="Suspendido" type="xs:boolean" />
+            <xs:element minOccurs="0" name="Cancelado" type="xs:boolean" />
+            <xs:element minOccurs="0" name="QxAsignado" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="UsuarioNovedad" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="Comentarios" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PlanificarCirugia_000082ABMResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="PlanificarCirugia_000082ABMResult" nillable="true" type="q2:EstadoRespuesta" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HISMiddleware.Modules.OrdenesMedicas.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HISMiddleware.Modules.OrdenesMedicas.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/HISMiddleware" />
+      <xs:complexType name="CxPendientesResponseDataWrapper">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DatosCasoBPM" nillable="true" type="tns:BackLog" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/HISMiddleware" minOccurs="0" name="EstadoRespuesta" nillable="true" type="q1:EstadoRespuesta" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CxPendientesResponseDataWrapper" nillable="true" type="tns:CxPendientesResponseDataWrapper" />
+      <xs:complexType name="BackLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OrdenCx" nillable="true" type="tns:ArrayOfOrdenCx" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BackLog" nillable="true" type="tns:BackLog" />
+      <xs:complexType name="ArrayOfOrdenCx">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="OrdenCx" nillable="true" type="tns:OrdenCx" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfOrdenCx" nillable="true" type="tns:ArrayOfOrdenCx" />
+      <xs:complexType name="OrdenCx">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Apellido" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CamaDestino" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoPaciente" type="xs:int" />
+          <xs:element minOccurs="0" name="CuitFinanciador" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CuitProfesionalResponsable" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescripcionCirugia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Diagnostico" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Equipamiento" nillable="true" type="tns:Equipamiento" />
+          <xs:element minOccurs="0" name="FechaHoraSolicitada" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FechaModificada" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HistoriaClinica" type="xs:int" />
+          <xs:element minOccurs="0" name="IntubacionDificultosa" type="xs:int" />
+          <xs:element minOccurs="0" name="Materiales" nillable="true" type="tns:Materiales" />
+          <xs:element minOccurs="0" name="NivelUrgencia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NroCasoBpm" type="xs:int" />
+          <xs:element minOccurs="0" name="NroDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NroFormularioHIS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NroReapertura" type="xs:int" />
+          <xs:element minOccurs="0" name="PacienteAlergico" type="xs:int" />
+          <xs:element minOccurs="0" name="PacienteInternado" type="xs:int" />
+          <xs:element minOccurs="0" name="Procedimientos" nillable="true" type="tns:Procedimientos" />
+          <xs:element minOccurs="0" name="Reapertura" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RequiereAnatomiaPatologica" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RequiereRX" type="xs:int" />
+          <xs:element minOccurs="0" name="RequiereSangre" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Sexo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoAnestesia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoFormularioHIS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsuarioSolicitante" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrdenCx" nillable="true" type="tns:OrdenCx" />
+      <xs:complexType name="Equipamiento">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Equipo" nillable="true" type="tns:ArrayOfEquipo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Equipamiento" nillable="true" type="tns:Equipamiento" />
+      <xs:complexType name="ArrayOfEquipo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Equipo" nillable="true" type="tns:Equipo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfEquipo" nillable="true" type="tns:ArrayOfEquipo" />
+      <xs:complexType name="Equipo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Equipo" nillable="true" type="tns:Equipo" />
+      <xs:complexType name="Materiales">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Material" nillable="true" type="tns:ArrayOfMaterial" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Materiales" nillable="true" type="tns:Materiales" />
+      <xs:complexType name="ArrayOfMaterial">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Material" nillable="true" type="tns:Material" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfMaterial" nillable="true" type="tns:ArrayOfMaterial" />
+      <xs:complexType name="Material">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+          <xs:element minOccurs="0" name="CodigoBPM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodigoSap" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescripcionMateriales" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MarcaSugeridad" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Material" nillable="true" type="tns:Material" />
+      <xs:complexType name="Procedimientos">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Procedimiento" nillable="true" type="tns:ArrayOfProcedimiento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Procedimientos" nillable="true" type="tns:Procedimientos" />
+      <xs:complexType name="ArrayOfProcedimiento">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Procedimiento" nillable="true" type="tns:Procedimiento" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfProcedimiento" nillable="true" type="tns:ArrayOfProcedimiento" />
+      <xs:complexType name="Procedimiento">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CPT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Caja" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DescripcionProcedimiento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LadoCirugia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nivel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Principal" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Procedimiento" nillable="true" type="tns:Procedimiento" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HISMiddleware" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HISMiddleware" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="EstadoRespuesta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodigoRespuesta" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IOrdenesMedicasService_ObtenerCxPendientes_000078CNS_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCxPendientes_000078CNS" />
+  </wsdl:message>
+  <wsdl:message name="IOrdenesMedicasService_ObtenerCxPendientes_000078CNS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCxPendientes_000078CNSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrdenesMedicasService_PlanificarCirugia_000082ABM_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlanificarCirugia_000082ABM" />
+  </wsdl:message>
+  <wsdl:message name="IOrdenesMedicasService_PlanificarCirugia_000082ABM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlanificarCirugia_000082ABMResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOrdenesMedicasService">
+    <wsdl:operation name="ObtenerCxPendientes_000078CNS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrdenesMedicasService/ObtenerCxPendientes_000078CNS" message="tns:IOrdenesMedicasService_ObtenerCxPendientes_000078CNS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrdenesMedicasService/ObtenerCxPendientes_000078CNSResponse" message="tns:IOrdenesMedicasService_ObtenerCxPendientes_000078CNS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlanificarCirugia_000082ABM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrdenesMedicasService/PlanificarCirugia_000082ABM" message="tns:IOrdenesMedicasService_PlanificarCirugia_000082ABM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrdenesMedicasService/PlanificarCirugia_000082ABMResponse" message="tns:IOrdenesMedicasService_PlanificarCirugia_000082ABM_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOrdenesMedicasService" type="tns:IOrdenesMedicasService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerCxPendientes_000078CNS">
+      <soap:operation soapAction="http://tempuri.org/IOrdenesMedicasService/ObtenerCxPendientes_000078CNS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlanificarCirugia_000082ABM">
+      <soap:operation soapAction="http://tempuri.org/IOrdenesMedicasService/PlanificarCirugia_000082ABM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IOrdenesMedicasService1" type="tns:IOrdenesMedicasService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IOrdenesMedicasService1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerCxPendientes_000078CNS">
+      <soap:operation soapAction="http://tempuri.org/IOrdenesMedicasService/ObtenerCxPendientes_000078CNS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlanificarCirugia_000082ABM">
+      <soap:operation soapAction="http://tempuri.org/IOrdenesMedicasService/PlanificarCirugia_000082ABM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrdenesMedicasService">
+    <wsdl:port name="BasicHttpBinding_IOrdenesMedicasService" binding="tns:BasicHttpBinding_IOrdenesMedicasService">
+      <soap:address location="http://srv-pr-iispr1-h.hospital.austral/HISMiddleware/OrdenesMedicasService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IOrdenesMedicasService1" binding="tns:BasicHttpBinding_IOrdenesMedicasService1">
+      <soap:address location="https://int_pr.hospitalaustral.edu.ar/HISMiddleware/OrdenesMedicasService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

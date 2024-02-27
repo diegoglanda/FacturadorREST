@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="173fbe58-e614-45ce-ad4b-9a5a4ff1ddd1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TurneraService.xsd" MetadataType="Schema" ID="6e07f426-a957-4227-bf36-2807784a713f" SourceId="1" SourceUrl="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TurneraService1.xsd" MetadataType="Schema" ID="5f799a0c-946c-45a1-839f-de03a015c1cc" SourceId="1" SourceUrl="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TurneraService2.xsd" MetadataType="Schema" ID="97148a4d-ddf6-48be-939f-9e36714753c4" SourceId="1" SourceUrl="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TurneraService.wsdl" MetadataType="Wsdl" ID="6a07d05d-bdbc-4b3b-a979-c8e384bfbf3f" SourceId="1" SourceUrl="https://int_qa.hospitalaustral.edu.ar/HISMiddleware/TurneraService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HISMiddleware" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HISMiddleware" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ProfesionalesTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+      <xs:element minOccurs="0" name="Profesionales" nillable="true" type="tns:ArrayOfProfesionalTurneraDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfesionalesTurneraDataWrapper" nillable="true" type="tns:ProfesionalesTurneraDataWrapper" />
+  <xs:complexType name="EstadoRespuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+  <xs:complexType name="ArrayOfProfesionalTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProfesionalTurneraDataWrapper" nillable="true" type="tns:ProfesionalTurneraDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProfesionalTurneraDataWrapper" nillable="true" type="tns:ArrayOfProfesionalTurneraDataWrapper" />
+  <xs:complexType name="ProfesionalTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Profesional" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfesionalTurneraDataWrapper" nillable="true" type="tns:ProfesionalTurneraDataWrapper" />
+  <xs:complexType name="EspecialidadesTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Especialidades" nillable="true" type="tns:ArrayOfEspecialidadTurneraDataWrapper" />
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EspecialidadesTurneraDataWrapper" nillable="true" type="tns:EspecialidadesTurneraDataWrapper" />
+  <xs:complexType name="ArrayOfEspecialidadTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EspecialidadTurneraDataWrapper" nillable="true" type="tns:EspecialidadTurneraDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEspecialidadTurneraDataWrapper" nillable="true" type="tns:ArrayOfEspecialidadTurneraDataWrapper" />
+  <xs:complexType name="EspecialidadTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoAccionMedica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoTipoTurno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionAccionMedica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LetraAgrupamiento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EspecialidadTurneraDataWrapper" nillable="true" type="tns:EspecialidadTurneraDataWrapper" />
+  <xs:complexType name="SedesTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+      <xs:element minOccurs="0" name="Sedes" nillable="true" type="tns:ArrayOfSedeTurneraDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SedesTurneraDataWrapper" nillable="true" type="tns:SedesTurneraDataWrapper" />
+  <xs:complexType name="ArrayOfSedeTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SedeTurneraDataWrapper" nillable="true" type="tns:SedeTurneraDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSedeTurneraDataWrapper" nillable="true" type="tns:ArrayOfSedeTurneraDataWrapper" />
+  <xs:complexType name="SedeTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoInterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SedeTurneraDataWrapper" nillable="true" type="tns:SedeTurneraDataWrapper" />
+  <xs:complexType name="ProcedimientosTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+      <xs:element minOccurs="0" name="Procedimientos" nillable="true" type="tns:ArrayOfProcedimientoTurneraDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcedimientosTurneraDataWrapper" nillable="true" type="tns:ProcedimientosTurneraDataWrapper" />
+  <xs:complexType name="ArrayOfProcedimientoTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcedimientoTurneraDataWrapper" nillable="true" type="tns:ProcedimientoTurneraDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcedimientoTurneraDataWrapper" nillable="true" type="tns:ArrayOfProcedimientoTurneraDataWrapper" />
+  <xs:complexType name="ProcedimientoTurneraDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoCPT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Preparacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcedimientoTurneraDataWrapper" nillable="true" type="tns:ProcedimientoTurneraDataWrapper" />
+  <xs:complexType name="PacienteTurneraPrimeraVezDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CUIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPaciente" type="xs:int" />
+      <xs:element minOccurs="0" name="EsPrimeraVez" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+      <xs:element minOccurs="0" name="IdEspecialidad" type="xs:int" />
+      <xs:element minOccurs="0" name="NroHC" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PacienteTurneraPrimeraVezDataWrapper" nillable="true" type="tns:PacienteTurneraPrimeraVezDataWrapper" />
+  <xs:complexType name="OrdenesMedicasDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+      <xs:element minOccurs="0" name="OrdenesMedicas" nillable="true" type="tns:ArrayOfOrdenMedicaDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdenesMedicasDataWrapper" nillable="true" type="tns:OrdenesMedicasDataWrapper" />
+  <xs:complexType name="ArrayOfOrdenMedicaDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrdenMedicaDataWrapper" nillable="true" type="tns:OrdenMedicaDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrdenMedicaDataWrapper" nillable="true" type="tns:ArrayOfOrdenMedicaDataWrapper" />
+  <xs:complexType name="OrdenMedicaDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ambito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CantidadIndicada" type="xs:short" />
+      <xs:element minOccurs="0" name="CodigoEspecialidadDerivada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoEspecialidadDerivante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoLugarDerivado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPaciente" type="xs:int" />
+      <xs:element minOccurs="0" name="CuitProfesionalDerivado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuitProfesionalDerivante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescEspecialidadDeriv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionEspecialidadDerivante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Encuentro" type="xs:int" />
+      <xs:element minOccurs="0" name="Episodio" type="xs:int" />
+      <xs:element minOccurs="0" name="EspecialidadDerivada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaIndicacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaIndicada" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdEspecialidadDerivada" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSedeDerivada" type="xs:int" />
+      <xs:element minOccurs="0" name="LugarDerivado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroOrden" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObsSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrioridadSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcedimientosMedicos" nillable="true" type="tns:ArrayOfProcedimientoMedicoDataWrapper" />
+      <xs:element minOccurs="0" name="ProfesionalDerivado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfesionalDerivante" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SedeDerivada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicioDerivado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoOrden" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdenMedicaDataWrapper" nillable="true" type="tns:OrdenMedicaDataWrapper" />
+  <xs:complexType name="ArrayOfProcedimientoMedicoDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcedimientoMedicoDataWrapper" nillable="true" type="tns:ProcedimientoMedicoDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcedimientoMedicoDataWrapper" nillable="true" type="tns:ArrayOfProcedimientoMedicoDataWrapper" />
+  <xs:complexType name="ProcedimientoMedicoDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:short" />
+      <xs:element minOccurs="0" name="CodigoCPT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionCPT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcedimientoMedicoDataWrapper" nillable="true" type="tns:ProcedimientoMedicoDataWrapper" />
+  <xs:complexType name="ArrayOfProcedimientoTurnoDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProcedimientoTurnoDataWrapper" nillable="true" type="tns:ProcedimientoTurnoDataWrapper" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProcedimientoTurnoDataWrapper" nillable="true" type="tns:ArrayOfProcedimientoTurnoDataWrapper" />
+  <xs:complexType name="ProcedimientoTurnoDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:short" />
+      <xs:element minOccurs="0" name="CodigoCPT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroFormulario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroOrdenOriginal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCPT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoFormulario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoOrdenOriginal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VigenciaCPT" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcedimientoTurnoDataWrapper" nillable="true" type="tns:ProcedimientoTurnoDataWrapper" />
+  <xs:complexType name="TurnoInformadoDataWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+      <xs:element minOccurs="0" name="NumeroFormulario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoFormulario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnoInformadoDataWrapper" nillable="true" type="tns:TurnoInformadoDataWrapper" />
+  <xs:complexType name="ArrayOfTurnoCancelar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TurnoCancelar" nillable="true" type="tns:TurnoCancelar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTurnoCancelar" nillable="true" type="tns:ArrayOfTurnoCancelar" />
+  <xs:complexType name="TurnoCancelar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoPaciente" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroFormulario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoFormulario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnoCancelar" nillable="true" type="tns:TurnoCancelar" />
+  <xs:complexType name="TurnosCancelados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+      <xs:element minOccurs="0" name="TurnosCancelarResponse" nillable="true" type="tns:ArrayOfTurnoCancelado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnosCancelados" nillable="true" type="tns:TurnosCancelados" />
+  <xs:complexType name="ArrayOfTurnoCancelado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TurnoCancelado" nillable="true" type="tns:TurnoCancelado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTurnoCancelado" nillable="true" type="tns:ArrayOfTurnoCancelado" />
+  <xs:complexType name="TurnoCancelado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoPaciente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroFormulario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoFormulario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnoCancelado" nillable="true" type="tns:TurnoCancelado" />
+  <xs:complexType name="TurnoInformadoDataWrapperV2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+      <xs:element minOccurs="0" name="TurnosResponse" nillable="true" type="tns:ArrayOfTurnoInformadoResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnoInformadoDataWrapperV2" nillable="true" type="tns:TurnoInformadoDataWrapperV2" />
+  <xs:complexType name="ArrayOfTurnoInformadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TurnoInformadoResponse" nillable="true" type="tns:TurnoInformadoResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTurnoInformadoResponse" nillable="true" type="tns:ArrayOfTurnoInformadoResponse" />
+  <xs:complexType name="TurnoInformadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoCPT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoRespuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroFormulario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCPT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoFormulario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnoInformadoResponse" nillable="true" type="tns:TurnoInformadoResponse" />
+  <xs:simpleType name="DiaSemanal">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lunes" />
+      <xs:enumeration value="Martes" />
+      <xs:enumeration value="Miercoles" />
+      <xs:enumeration value="Jueves" />
+      <xs:enumeration value="Viernes" />
+      <xs:enumeration value="Sabado" />
+      <xs:enumeration value="Domingo" />
+      <xs:enumeration value="Todos" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DiaSemanal" nillable="true" type="tns:DiaSemanal" />
+  <xs:complexType name="TurnosAfectados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CantidadTurnosAfectados" type="xs:int" />
+      <xs:element minOccurs="0" name="EstadoRespuesta" nillable="true" type="tns:EstadoRespuesta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnosAfectados" nillable="true" type="tns:TurnosAfectados" />
+</xs:schema>
